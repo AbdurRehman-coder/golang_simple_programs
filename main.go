@@ -55,5 +55,46 @@ func main() {
 	fmt.Println(number)
 
 	typeChecking := "working hard"
-	fmt.Printf("type is: %T\n", typeChecking)
+	fmt.Printf("type is: %T\n", typeChecking) // string type
+
+	/// if Statements
+	if age > 18 && age < 25 {
+		fmt.Println("You are an adult")
+	} else if age > 30 && age < 50 {
+		fmt.Println("You are now a man")
+	} else {
+		fmt.Println("Oh!, You are old enough")
+	}
+
+	/// Loops, In Golang we have only for loop
+	/* for i := 0; i < 10; i += 2 {
+		fmt.Println(i)
+	} */
+
+	/// Arrays / List
+	/// Assign and Access Values
+	var theArray [3]string
+	theArray[0] = "Canada"
+	theArray[1] = "USA"
+	// theArray[2] = "France"
+	fmt.Println(theArray)
+
+	///Initializing an Array with an Array Literal
+	array1 := [5]int{34, 3, 2, 1}
+	var yy [5]int = [5]int{10, 20, 30}
+	fmt.Println(array1)
+	fmt.Println(yy)
+
+	arrList := [3]string{"foo", "jar"} // List
+	arrList[2] = "bar"
+	fmt.Println(arrList)
+
+	arr := []int{3, 7} // Slic, This is called slice, because it is a growable list
+	fmt.Println("length: ", len(arr))
+	fmt.Println("capacity: ", cap(arr))
+
+	// adding new values to the list
+	arr = append(arr, 20)
+	fmt.Println("length1: ", len(arr))
+	fmt.Println("capacity1: ", cap(arr))
 }
