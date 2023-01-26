@@ -97,4 +97,32 @@ func main() {
 	arr = append(arr, 20)
 	fmt.Println("length1: ", len(arr))
 	fmt.Println("capacity1: ", cap(arr))
+	// print the list
+	for i = 0; i < len(arr); i++ {
+		fmt.Println("arr: ", arr[i])
+	}
+
+	/// Functions
+	f := func() {
+		// this defer is used for disposing the function same like dispose() method in flutter
+		// and it will called after the whole function completed
+		defer func() {
+			fmt.Println("cleanup1")
+			defer func() {
+				fmt.Println("cleanup2")
+
+			}()
+		}()
+		fmt.Println("anonymous function called")
+	}
+	f()
+
+	sumResult := sum(23, 33)
+	fmt.Printf("Sum = %v\n", sumResult)
+
+}
+
+/// Fuction in Go
+func sum(x int, y int) int {
+	return x + y
 }
