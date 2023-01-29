@@ -120,9 +120,31 @@ func main() {
 	sumResult := sum(23, 33)
 	fmt.Printf("Sum = %v\n", sumResult)
 
+	/// User Define Types [or class in other languages] || Struct
+	user := UserType{
+		"Abdur Rehman",
+		22,
+	}
+	fmt.Printf("user value is %+v\n", user)
+
+	/// Pointers in Golang
+	k := 10
+	mutatee(&k)
+	fmt.Println("k value is: ", k)
+
+}
+
+func mutatee(num *int) {
+	*num = *num + 100
+
 }
 
 /// Fuction in Go
 func sum(x int, y int) int {
 	return x + y
+}
+
+type UserType struct {
+	Name string
+	Age  uint8
 }
